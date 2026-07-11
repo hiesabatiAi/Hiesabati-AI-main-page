@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Hiesabati AI</title>
+  <meta name="description" content="Get in touch with the Hiesabati AI team. Start a free trial, talk to sales, or request a demo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+  <style>
+    /* Premium text gradients */
+    .contact-title-gradient {
+      background: linear-gradient(135deg, var(--text-primary) 30%, var(--brand-blue-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+    
+    .contact-layout { 
+      display: grid; 
+      grid-template-columns: 1fr 1.3fr; 
+      gap: 64px; 
+      margin-top: 60px; 
+      align-items: start;
+      position: relative;
+    }
+    @media (max-width: 900px) { 
+      .contact-layout { grid-template-columns: 1fr; gap: 48px; } 
+    }
+    
+    .contact-info h2 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--text-primary) 50%, var(--text-secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .contact-info p { 
+      color: var(--text-secondary); 
+      line-height: 1.8; 
+      margin-bottom: 36px; 
+      font-size: 15.5px; 
+    }
+    
+    /* Modern Glassmorphic details console */
+    .contact-details-box {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.05) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      position: relative;
+    }
+    
+    [data-theme="light"] .contact-details-box {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.95) 100%);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.03),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    }
+    
+    .contact-item { 
+      display: flex; 
+      align-items: center; 
+      gap: 24px; 
+      margin-bottom: 32px; 
+    }
+    .contact-item:last-child { margin-bottom: 0; }
+    .contact-item h4 { font-size: 16px; margin-bottom: 6px; font-weight: 700; color: var(--text-primary); }
+    .contact-item p { font-size: 14.5px; color: var(--text-secondary); margin: 0; }
+    .contact-item a { transition: var(--transition-smooth); text-decoration: none; font-weight: 500; }
+    .contact-item a:hover { color: var(--brand-blue-light) !important; }
+
+    /* Floating Glowing Form Card */
+    .contact-form-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.04) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 
+        0 40px 80px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      position: relative;
+    }
+    
+    /* Background light orb glow under form card */
+    .contact-form-card::after {
+      content: '';
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: var(--brand-blue-light);
+      filter: blur(120px);
+      opacity: 0.15;
+      bottom: -30px;
+      right: -30px;
+      z-index: -1;
+      pointer-events: none;
+      transition: all 0.5s ease;
+    }
+    
+    .contact-form-card:hover::after {
+      opacity: 0.25;
+      transform: scale(1.2);
+    }
+    
+    [data-theme="light"] .contact-form-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.95) 100%);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    }
+
+    /* Stripe/Linear style input fields */
+    .form-group { margin-bottom: 28px; }
+    .form-group label { 
+      display: block; 
+      font-size: 11px; 
+      font-weight: 700; 
+      margin-bottom: 10px; 
+      color: var(--text-secondary); 
+      text-transform: uppercase; 
+      letter-spacing: 0.1em; 
+      font-family: var(--font-mono); 
+    }
+    
+    .form-group input, 
+    .form-group textarea, 
+    .form-group select { 
+      width: 100%; 
+      background: rgba(255, 255, 255, 0.02); 
+      border: 1px solid rgba(255, 255, 255, 0.08); 
+      border-radius: var(--radius-md); 
+      padding: 16px 20px; 
+      color: var(--text-primary); 
+      font-family: inherit; 
+      font-size: 14.5px; 
+      outline: none; 
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); 
+      box-sizing: border-box; 
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Light Mode High-Contrast Input Fields */
+    [data-theme="light"] .form-group input, 
+    [data-theme="light"] .form-group textarea, 
+    [data-theme="light"] .form-group select {
+      background: rgba(0, 0, 0, 0.025);
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      color: #090a0c;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+    
+    .form-group input:focus, 
+    .form-group textarea:focus, 
+    .form-group select:focus { 
+      border-color: var(--brand-blue-light); 
+      box-shadow: 
+        0 0 0 1px var(--brand-blue-light),
+        0 8px 30px rgba(59, 130, 246, 0.2);
+      background: rgba(0, 0, 0, 0.3);
+      transform: translateY(-1px);
+    }
+    
+    [data-theme="light"] .form-group input:focus, 
+    [data-theme="light"] .form-group textarea:focus, 
+    [data-theme="light"] .form-group select:focus {
+      background: #ffffff;
+      border-color: var(--brand-blue);
+      box-shadow: 
+        0 0 0 1px var(--brand-blue),
+        0 8px 30px rgba(37, 99, 235, 0.12);
+      transform: translateY(-1px);
+    }
+    
+    .form-group textarea { min-height: 140px; resize: vertical; }
+    
+    /* Submit button premium gradient */
+    .submit-btn { 
+      width: 100%; 
+      padding: 18px; 
+      border: 1px solid rgba(59, 130, 246, 0.3); 
+      border-radius: var(--radius-md); 
+      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%); 
+      color: #ffffff; 
+      font-size: 15px; 
+      font-weight: 700; 
+      cursor: pointer; 
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 20px rgba(37, 99, 235, 0.35);
+      letter-spacing: 0.02em;
+    }
+    
+    [data-theme="light"] .submit-btn {
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%);
+      box-shadow: 0 6px 20px rgba(29, 78, 216, 0.3);
+      border: none;
+    }
+    
+    .submit-btn:hover { 
+      transform: translateY(-2px); 
+      box-shadow: 0 12px 32px rgba(37, 99, 235, 0.5); 
+      filter: brightness(1.08);
+    }
+    
+    [data-theme="light"] .submit-btn:hover {
+      box-shadow: 0 12px 32px rgba(29, 78, 216, 0.4); 
+    }
+    
+    .submit-btn:active {
+      transform: translateY(0) scale(0.98);
+    }
+    
+    .success-banner { 
+      display: none; 
+      background: rgba(16,185,129,0.06); 
+      border: 1px solid rgba(16,185,129,0.2); 
+      border-radius: var(--radius-md); 
+      padding: 16px; 
+      color: var(--brand-emerald); 
+      font-weight: 600; 
+      margin-bottom: 28px; 
+      font-size: 14.5px; 
+      text-align: center; 
+    }
+     .page-hero-gradient {
+      background: linear-gradient(135deg, var(--text-primary) 30%, var(--brand-blue-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline;
+    }
+    .about-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border-color); border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; margin-top: 56px; }
+    @media (max-width: 640px) { .about-stats { grid-template-columns: repeat(2, 1fr); } }
+    .about-stat { background: var(--bg-dark); padding: 32px 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; transition: background 0.3s ease; }
+    [data-theme="light"] .about-stat { background: var(--bg-surface); }
+    .about-stat:hover { background: var(--bg-surface-2); }
+    .about-stat-val { font-size: 30px; font-weight: 900; letter-spacing: -0.03em; background: linear-gradient(135deg, var(--text-primary), var(--brand-blue-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .about-stat-label { font-size: 11px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-mono); }
+    
+  </style>
+</head>
+<body>
+  <div class="grid-lines"></div>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo-group">
+        <img src="assets/logo.jpeg" alt="Hiesabati Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="logo-sub" data-i18n="logoFinancePro">FinancePro</span>
+          <span class="logo-main" data-i18n="logoHiesabati">Hiesabati AI</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" data-i18n="navHome">Home</a>
+        <a href="features.html" data-i18n="navFeatures">Features</a>
+        <a href="pricing.html" data-i18n="navPricing">Pricing</a>
+        <a href="about.html" data-i18n="navAbout">About</a>
+        <a href="blog.html" data-i18n="navBlog">Blog</a>
+        <a href="contact.html" data-i18n="navContact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Language Selector -->
+        <div class="dropdown-wrapper">
+          <button id="lang-trigger" class="btn-dropdown">
+            <img id="current-flag" src="https://flagcdn.com/w20/us.png" alt="English Flag">
+            <span id="current-lang-name">English</span>
+          </button>
+          <div id="lang-menu" class="dropdown-menu">
+            <button class="dropdown-item" data-lang="en"><img src="https://flagcdn.com/w20/us.png" alt="US Flag"> English</button>
+            <button class="dropdown-item" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR Flag"> Français</button>
+            <button class="dropdown-item" data-lang="zh"><img src="https://flagcdn.com/w20/cn.png" alt="CN Flag"> 中文</button>
+            <button class="dropdown-item" data-lang="ur"><img src="https://flagcdn.com/w20/pk.png" alt="PK Flag"> اردو</button>
+            <button class="dropdown-item" data-lang="ar"><img src="https://flagcdn.com/w20/sa.png" alt="SA Flag"> العربية</button>
+          </div>
+        </div>
+
+        <!-- Account Buttons -->
+        <div class="nav-auth-buttons" aria-label="Account actions">
+          <a class="btn btn-secondary btn-auth" href="https://www.hiesabati.com/auth" data-i18n="navSignIn">Sign In</a>
+          <a class="btn btn-primary btn-auth" href="https://www.hiesabati.com/auth" data-i18n="navGetStarted">Get Started</a>
+        </div>
+
+        <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5" />
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburger -->
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV OVERLAY -->
+  <div id="mobile-nav" aria-hidden="true">
+    <div class="mobile-nav-links">
+      <a href="index.html" data-i18n="navHome">Home</a>
+      <a href="features.html" data-i18n="navFeatures">Features</a>
+      <a href="pricing.html" data-i18n="navPricing">Pricing</a>
+      <a href="about.html" data-i18n="navAbout">About</a>
+      <a href="blog.html" data-i18n="navBlog">Blog</a>
+      <a href="contact.html" data-i18n="navContact">Contact</a>
+    </div>
+
+    <!-- Language & Theme Controls -->
+    <div class="mobile-nav-controls">
+      <div class="mobile-nav-control-label">Language</div>
+      <div class="mobile-lang-grid">
+        <button class="mobile-lang-btn" data-lang="en"><img src="https://flagcdn.com/w20/us.png" alt="US"> English</button>
+        <button class="mobile-lang-btn" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR"> Français</button>
+        <button class="mobile-lang-btn" data-lang="zh"><img src="https://flagcdn.com/w20/cn.png" alt="CN"> 中文</button>
+        <button class="mobile-lang-btn" data-lang="ur"><img src="https://flagcdn.com/w20/pk.png" alt="PK"> اردو</button>
+        <button class="mobile-lang-btn" data-lang="ar"><img src="https://flagcdn.com/w20/sa.png" alt="SA"> العربية</button>
+      </div>
+
+      <div class="mobile-nav-control-label" style="margin-top: 20px;">Appearance</div>
+      <button id="mobile-theme-toggle" class="mobile-theme-btn">
+        <span class="mobile-theme-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5" />
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+          </svg>
+        </span>
+        <span class="mobile-theme-label">Toggle Dark / Light Mode</span>
+      </button>
+    </div>
+
+    <div class="mobile-nav-ctas">
+      <a href="https://www.hiesabati.com/auth" class="btn btn-secondary" data-i18n="navSignIn">Sign In</a>
+      <a href="https://www.hiesabati.com/auth" class="btn btn-primary" data-i18n="navGetStarted">Get Started</a>
+    </div>
+  </div>
+
+  <!-- CONTENT SECTION -->
+  <section style="padding-top: 140px;">
+    <div class="container">
+
+      <!-- Hero Heading -->
+      <div class="section-head">
+        <span class="section-badge">Get in Touch</span>
+        <h1 class="section-title">
+          Let's Build Something<br>
+          <span class="contact-title-gradient">Extraordinary Together</span>
+        </h1>
+        <p class="section-desc">Whether you need a demo, custom pricing, or direct support — our team of financial AI engineers is ready to help.</p>
+      </div>
+
+      <!-- Trust Stats Strip -->
+      <div class="about-stats">
+        <div class="about-stat"><span class="about-stat-val">500+</span><span class="about-stat-label">Enterprise
+            Clients</span></div>
+        <div class="about-stat"><span class="about-stat-val">$2B+</span><span class="about-stat-label">Transactions
+            Processed</span></div>
+        <div class="about-stat"><span class="about-stat-val">99.9%</span><span class="about-stat-label">Platform Uptime</span>
+        </div>
+        <div class="about-stat"><span class="about-stat-val">45+</span><span class="about-stat-label">Countries Served</span>
+        </div>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Left: Info Panel -->
+        <div class="contact-info">
+          <h2>We're here to help</h2>
+          <p>Hiesabati's support and sales engineers are available worldwide to guide you through setup, API integrations, and financial platform onboarding.</p>
+
+          <div class="contact-details-box">
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div>
+                <h4>Email Support</h4>
+                <p><a href="mailto:hiesabati@gmail.com">hiesabati@gmail.com</a></p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                </svg>
+              </div>
+              <div>
+                <h4>WhatsApp Support</h4>
+                <p><a href="https://wa.me/971558870648" target="_blank">+971 55 887 0648</a></p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div>
+                <h4>Business Hours</h4>
+                <p>Mon – Fri, 9AM – 6PM GST</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Social Proof -->
+          <div class="contact-trust-strip">
+            <span>Trusted by teams at</span>
+            <div class="contact-trust-logos">
+              <span>🏦 Banks</span>
+              <span>🏢 Enterprises</span>
+              <span>🏗️ Construction</span>
+              <span>🛒 Retail</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Form Card -->
+        <div class="contact-form-card">
+          <div class="contact-form-header">
+            <div class="contact-form-badge">✦ Start a Conversation</div>
+            <h3 class="contact-form-title">Send us a message</h3>
+            <p class="contact-form-sub">We'll respond within 2 business hours.</p>
+          </div>
+
+          <div id="contact-success" class="success-banner">✓ Message received. We will respond within 2 hours.</div>
+
+          <form id="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Full Name</label>
+                <input type="text" id="contact-name" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-company">Company</label>
+                <input type="text" id="contact-company" placeholder="Acme Corp">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email Address</label>
+              <input type="email" id="contact-email" placeholder="john@company.com" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <select id="contact-subject">
+                <option value="">Select a topic...</option>
+                <option>Request a Demo</option>
+                <option>Pricing Inquiry</option>
+                <option>Technical Support</option>
+                <option>API Integration</option>
+                <option>Enterprise Contract</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" placeholder="Describe your requirements or ask us anything..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:8px;">
+                <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container max-w-4xl text-center">
+      <!-- Call to Action Banner -->
+      <div class="footer-cta-card">
+        <h2 data-i18n="footerCtaTitle">Ready to Transform Your Financial Operations?</h2>
+        <p data-i18n="footerCtaSubtitle">Join hundreds of businesses using AI Financial Assistant to make smarter
+          financial decisions in Global World</p>
+        <a href="https://www.hiesabati.com/auth" class="btn btn-primary btn-large" data-i18n="footerCtaPrimary">Start Your Free Trial
+          Now</a>
+        <span class="cta-subtext" data-i18n="footerCtaSubtext">Free forever plan • Setup in 2 minutes • No credit card
+          required</span>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-brand-column">
+          <span class="brand-title" data-i18n="logoHiesabati">Hiesabati AI</span>
+          <p class="brand-desc" data-i18n="footerBrandDesc">AI-powered financial management for modern businesses in Global World.</p>
+          <!-- Social Media Links -->
+          <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61590682032569" class="social-link facebook" aria-label="Facebook" title="Facebook">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/hiesabati_ai/" class="social-link instagram" aria-label="Instagram" title="Instagram">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/hiesabatiai/" class="social-link linkedin" aria-label="LinkedIn" title="LinkedIn">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://x.com/HIESABATI" class="social-link x-twitter" aria-label="X (Twitter)" title="X (Twitter)">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.258 5.626zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@Hiesabati" class="social-link youtube" aria-label="YouTube" title="YouTube">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            
+          </div>
+        </div>
+        <div class="footer-links-grid-cols">
+          <div class="footer-links-column">
+            <span class="links-title" data-i18n="footerColProduct">Product</span>
+            <a href="features.html" data-i18n="footerLinkFeatures">Features</a>
+            <a href="pricing.html" data-i18n="footerLinkPricing">Pricing</a>
+            <a href="about.html" data-i18n="footerLinkAbout">About Us</a>
+            <a href="blog.html" data-i18n="footerLinkBlog">Blog</a>
+          </div>
+          <div class="footer-links-column">
+            <span class="links-title" data-i18n="footerColSupport">Support</span>
+            <a href="contact.html" data-i18n="footerLinkHelp">Help Center</a>
+            <a href="docs.html" data-i18n="footerLinkDocs">Documentation</a>
+            <a href="contact.html" data-i18n="footerLinkContact">Contact Sales</a>
+          </div>
+          <div class="footer-links-column">
+            <span class="links-title" data-i18n="footerColLegal">Legal</span>
+            <a href="privacy.html" data-i18n="footerLinkPrivacy">Privacy Policy</a>
+            <a href="terms.html" data-i18n="footerLinkTerms">Terms of Service</a>
+            <a href="security.html" data-i18n="footerLinkSecurity">Security</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>&copy; 2026 Hiesabati AI. All rights reserved.</span>
+        <div class="footer-bottom-social">
+          <a href="https://www.facebook.com/profile.php?id=61590682032569" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://www.instagram.com/hiesabati_ai/" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="https://www.linkedin.com/in/hiesabatiai/" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://x.com/HIESABATI" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.258 5.626zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://www.youtube.com/@Hiesabati" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="translations.js"></script>
+  <script src="app.js"></script>
+  <script>
+    const form = document.getElementById('contact-form');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const success = document.getElementById('contact-success');
+        if (success) success.style.display = 'block';
+        this.reset();
+        setTimeout(() => { if (success) success.style.display = 'none'; }, 4000);
+      });
+    }
+  </script>
+</body>
+</html>

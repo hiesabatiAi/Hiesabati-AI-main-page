@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation — Hiesabati AI</title>
+  <meta name="description" content="Learn how to connect financial feeds, run double-entry audits, and trigger automated CFO reports.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .page-hero-gradient {
+      background: linear-gradient(135deg, var(--text-primary) 30%, var(--brand-blue-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline;
+    }
+    
+    .docs-layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+      margin-top: 56px;
+      align-items: start;
+    }
+    
+    @media (max-width: 768px) {
+      .docs-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+    
+    /* Documentation Sidebar */
+    .docs-sidebar {
+      position: sticky;
+      top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .docs-nav-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 18px;
+      border-radius: var(--radius-sm);
+      color: var(--text-secondary);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      border: 1px solid transparent;
+    }
+    
+    .docs-nav-link:hover {
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.02);
+    }
+    
+    [data-theme="light"] .docs-nav-link:hover {
+      background: rgba(0, 0, 0, 0.02);
+    }
+    
+    .docs-nav-link.active {
+      color: var(--brand-blue-light);
+      background: rgba(59, 130, 246, 0.06);
+      border: 1px solid rgba(59, 130, 246, 0.15);
+    }
+    
+    /* Documentation Main Content Console */
+    .docs-content-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.04) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 
+        0 40px 80px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      position: relative;
+    }
+    
+    [data-theme="light"] .docs-content-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.95) 100%);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.03),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    }
+    
+    .docs-section {
+      margin-bottom: 48px;
+    }
+    .docs-section:last-child {
+      margin-bottom: 0;
+    }
+    
+    .docs-section h2 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+    }
+    
+    .docs-section p {
+      font-size: 14.5px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+    
+    .docs-code-block {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px 24px;
+      font-family: var(--font-mono);
+      font-size: 13.5px;
+      color: #93c5fd;
+      overflow-x: auto;
+      margin: 20px 0;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    [data-theme="light"] .docs-code-block {
+      background: #0f172a;
+      color: #38bdf8;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-lines"></div>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo-group">
+        <img src="assets/logo.jpeg" alt="Hiesabati Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="logo-sub" data-i18n="logoFinancePro">FinancePro</span>
+          <span class="logo-main" data-i18n="logoHiesabati">Hiesabati AI</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" data-i18n="navHome">Home</a>
+        <a href="features.html" data-i18n="navFeatures">Features</a>
+        <a href="pricing.html" data-i18n="navPricing">Pricing</a>
+        <a href="about.html" data-i18n="navAbout">About</a>
+        <a href="blog.html" data-i18n="navBlog">Blog</a>
+        <a href="contact.html" data-i18n="navContact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Language Selector -->
+        <div class="dropdown-wrapper">
+          <button id="lang-trigger" class="btn-dropdown">
+            <img id="current-flag" src="https://flagcdn.com/w20/us.png" alt="English Flag">
+            <span id="current-lang-name">English</span>
+          </button>
+          <div id="lang-menu" class="dropdown-menu">
+            <button class="dropdown-item" data-lang="en"><img src="https://flagcdn.com/w20/us.png" alt="US Flag"> English</button>
+            <button class="dropdown-item" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR Flag"> Français</button>
+            <button class="dropdown-item" data-lang="zh"><img src="https://flagcdn.com/w20/cn.png" alt="CN Flag"> 中文</button>
+            <button class="dropdown-item" data-lang="ur"><img src="https://flagcdn.com/w20/pk.png" alt="PK Flag"> اردو</button>
+            <button class="dropdown-item" data-lang="ar"><img src="https://flagcdn.com/w20/sa.png" alt="SA Flag"> العربية</button>
+          </div>
+        </div>
+
+        <!-- Account Buttons -->
+        <div class="nav-auth-buttons" aria-label="Account actions">
+          <a class="btn btn-secondary btn-auth" href="https://www.hiesabati.com/auth" data-i18n="navSignIn">Sign In</a>
+          <a class="btn btn-primary btn-auth" href="https://www.hiesabati.com/auth" data-i18n="navGetStarted">Get Started</a>
+        </div>
+
+        <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5" />
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburger -->
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV OVERLAY -->
+  <div id="mobile-nav" aria-hidden="true">
+    <div class="mobile-nav-links">
+      <a href="index.html" data-i18n="navHome">Home</a>
+      <a href="features.html" data-i18n="navFeatures">Features</a>
+      <a href="pricing.html" data-i18n="navPricing">Pricing</a>
+      <a href="about.html" data-i18n="navAbout">About</a>
+      <a href="blog.html" data-i18n="navBlog">Blog</a>
+      <a href="contact.html" data-i18n="navContact">Contact</a>
+    </div>
+
+    <!-- Language & Theme Controls -->
+    <div class="mobile-nav-controls">
+      <div class="mobile-nav-control-label">Language</div>
+      <div class="mobile-lang-grid">
+        <button class="mobile-lang-btn" data-lang="en"><img src="https://flagcdn.com/w20/us.png" alt="US"> English</button>
+        <button class="mobile-lang-btn" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR"> Français</button>
+        <button class="mobile-lang-btn" data-lang="zh"><img src="https://flagcdn.com/w20/cn.png" alt="CN"> 中文</button>
+        <button class="mobile-lang-btn" data-lang="ur"><img src="https://flagcdn.com/w20/pk.png" alt="PK"> اردو</button>
+        <button class="mobile-lang-btn" data-lang="ar"><img src="https://flagcdn.com/w20/sa.png" alt="SA"> العربية</button>
+      </div>
+
+      <div class="mobile-nav-control-label" style="margin-top: 20px;">Appearance</div>
+      <button id="mobile-theme-toggle" class="mobile-theme-btn">
+        <span class="mobile-theme-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5" />
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+          </svg>
+        </span>
+        <span class="mobile-theme-label">Toggle Dark / Light Mode</span>
+      </button>
+    </div>
+
+    <div class="mobile-nav-ctas">
+      <a href="https://www.hiesabati.com/auth" class="btn btn-secondary" data-i18n="navSignIn">Sign In</a>
+      <a href="https://www.hiesabati.com/auth" class="btn btn-primary" data-i18n="navGetStarted">Get Started</a>
+    </div>
+  </div>
+
+  <!-- CONTENT SECTION -->
+  <section style="padding-top: 140px;">
+    <div class="container">
+      <div class="section-head" style="text-align: left; margin-bottom: 20px;">
+        <span class="section-badge">System Guide</span>
+        <h1 class="section-title">
+          Platform<br>
+          <span class="page-hero-gradient">Documentation</span>
+        </h1>
+        <p class="section-desc" style="max-width: 600px; margin: 16px 0 0 0;">Learn how to connect financial feeds, set up real-time double-entry systems, and leverage cognitive CFO tools.</p>
+      </div>
+
+      <div class="docs-layout">
+        <!-- Sidebar Navigation -->
+        <div class="docs-sidebar">
+          <a href="#connecting" class="docs-nav-link active">1. Connecting Feeds</a>
+          <a href="#ledger" class="docs-nav-link">2. Automated Ledger</a>
+          <a href="#cfo" class="docs-nav-link">3. AI CFO Agent</a>
+          <a href="#security" class="docs-nav-link">4. Compliance &amp; Keys</a>
+        </div>
+
+        <!-- Main Content Card -->
+        <div class="docs-content-card">
+          <div id="connecting" class="docs-section">
+            <h2>1. Connecting Your Account</h2>
+            <p>Hiesabati integrates with your bank accounts, CRM platforms, and payment gateways. Visit the <strong>Integration</strong> panel in the Dashboard and authenticate via secure OAuth to start syncing.</p>
+            <div class="docs-code-block">
+// Initialization API Example
+Hiesabati.connect({
+  tenantId: "tenant_9a8f27b",
+  provider: "plaid",
+  scopes: ["read_transactions", "read_balances"]
+});
+            </div>
+          </div>
+
+          <div id="ledger" class="docs-section">
+            <h2>2. Automated Ledger Entries</h2>
+            <p>Once connected, the cognitive bookkeeper automatically parses invoices, logs accounts receivable, and assigns correct double-entry ledger vouchers.</p>
+          </div>
+
+          <div id="cfo" class="docs-section">
+            <h2>3. Interacting with the AI CFO</h2>
+            <p>Click on the AI CFO chat button at the bottom of the page or in your dashboard, and ask questions like <em>"What is our projected cash flow for next quarter?"</em> or <em>"Audit our VAT liability."</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container max-w-4xl text-center">
+      <!-- Call to Action Banner -->
+      <div class="footer-cta-card">
+        <h2 data-i18n="footerCtaTitle">Ready to Transform Your Financial Operations?</h2>
+        <p data-i18n="footerCtaSubtitle">Join hundreds of businesses using AI Financial Assistant to make smarter
+          financial decisions in Global World</p>
+        <a href="https://www.hiesabati.com/auth" class="btn btn-primary btn-large" data-i18n="footerCtaPrimary">Start Your Free Trial
+          Now</a>
+        <span class="cta-subtext" data-i18n="footerCtaSubtext">Free forever plan • Setup in 2 minutes • No credit card
+          required</span>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-brand-column">
+          <span class="brand-title" data-i18n="logoHiesabati">Hiesabati AI</span>
+          <p class="brand-desc" data-i18n="footerBrandDesc">AI-powered financial management for modern businesses in Global World.</p>
+          <!-- Social Media Links -->
+          <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61590682032569" class="social-link facebook" aria-label="Facebook" title="Facebook">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/hiesabati_ai/" class="social-link instagram" aria-label="Instagram" title="Instagram">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/hiesabatiai/" class="social-link linkedin" aria-label="LinkedIn" title="LinkedIn">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://x.com/HIESABATI" class="social-link x-twitter" aria-label="X (Twitter)" title="X (Twitter)">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.258 5.626zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@Hiesabati" class="social-link youtube" aria-label="YouTube" title="YouTube">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            
+          </div>
+        </div>
+        <div class="footer-links-grid-cols">
+          <div class="footer-links-column">
+            <span class="links-title" data-i18n="footerColProduct">Product</span>
+            <a href="features.html" data-i18n="footerLinkFeatures">Features</a>
+            <a href="pricing.html" data-i18n="footerLinkPricing">Pricing</a>
+            <a href="about.html" data-i18n="footerLinkAbout">About Us</a>
+            <a href="blog.html" data-i18n="footerLinkBlog">Blog</a>
+          </div>
+          <div class="footer-links-column">
+            <span class="links-title" data-i18n="footerColSupport">Support</span>
+            <a href="contact.html" data-i18n="footerLinkHelp">Help Center</a>
+            <a href="docs.html" data-i18n="footerLinkDocs">Documentation</a>
+            <a href="contact.html" data-i18n="footerLinkContact">Contact Sales</a>
+          </div>
+          <div class="footer-links-column">
+            <span class="links-title" data-i18n="footerColLegal">Legal</span>
+            <a href="privacy.html" data-i18n="footerLinkPrivacy">Privacy Policy</a>
+            <a href="terms.html" data-i18n="footerLinkTerms">Terms of Service</a>
+            <a href="security.html" data-i18n="footerLinkSecurity">Security</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>&copy; 2026 Hiesabati AI. All rights reserved.</span>
+        <div class="footer-bottom-social">
+          <a href="https://www.facebook.com/profile.php?id=61590682032569" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://www.instagram.com/hiesabati_ai/" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="https://www.linkedin.com/in/hiesabatiai/" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://x.com/HIESABATI" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.258 5.626zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://www.youtube.com/@Hiesabati" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="translations.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

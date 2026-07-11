@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing — Hiesabati AI</title>
+  <meta name="description"
+    content="Simple, transparent pricing for every stage of your business growth. All Hiesabati AI plans include a free trial with no credit card required.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="pricing-page">
+  <div class="grid-lines"></div>
+
+  <!-- NAV -->
+  <header id="header">
+    <div class="container header-container">
+      <a href="index.html" class="logo-group">
+        <img src="assets/logo.jpeg" alt="Hiesabati Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="logo-sub" data-i18n="logoFinancePro">FinancePro</span>
+          <span class="logo-main" data-i18n="logoHiesabati">Hiesabati AI</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" data-i18n="navHome">Home</a>
+        <a href="features.html" data-i18n="navFeatures">Features</a>
+        <a href="pricing.html" class="active" data-i18n="navPricing">Pricing</a>
+        <a href="about.html" data-i18n="navAbout">About</a>
+        <a href="blog.html" data-i18n="navBlog">Blog</a>
+        <a href="contact.html" data-i18n="navContact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <div class="dropdown-wrapper">
+          <button id="lang-trigger" class="btn-dropdown">
+            <img id="current-flag" src="https://flagcdn.com/w20/us.png" alt="English Flag">
+            <span id="current-lang-name">English</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div id="lang-menu" class="dropdown-menu">
+            <button class="dropdown-item" data-lang="en"><img src="https://flagcdn.com/w20/us.png" alt="US">
+              English</button>
+            <button class="dropdown-item" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR">
+              Français</button>
+            <button class="dropdown-item" data-lang="zh"><img src="https://flagcdn.com/w20/cn.png" alt="CN"> 中文</button>
+            <button class="dropdown-item" data-lang="ur"><img src="https://flagcdn.com/w20/pk.png" alt="PK">
+              اردو</button>
+            <button class="dropdown-item" data-lang="ar"><img src="https://flagcdn.com/w20/sa.png" alt="SA">
+              العربية</button>
+          </div>
+        </div>
+        <div class="nav-auth-buttons">
+          <a class="btn btn-secondary btn-auth" href="https://www.hiesabati.com/auth" data-i18n="navSignIn">Sign In</a>
+          <a class="btn btn-primary btn-auth" href="https://www.hiesabati.com/auth" data-i18n="navGetStarted">Get
+            Started</a>
+        </div>
+        <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5" />
+            <path
+              d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+          </svg>
+        </button>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div id="mobile-nav" aria-hidden="true">
+    <div class="mobile-nav-links">
+      <a href="index.html" data-i18n="navHome">Home</a>
+      <a href="features.html" data-i18n="navFeatures">Features</a>
+      <a href="pricing.html" data-i18n="navPricing">Pricing</a>
+      <a href="about.html" data-i18n="navAbout">About</a>
+      <a href="blog.html" data-i18n="navBlog">Blog</a>
+      <a href="contact.html" data-i18n="navContact">Contact</a>
+    </div>
+    <div class="mobile-nav-controls">
+      <div class="mobile-nav-control-label">Language</div>
+      <div class="mobile-lang-grid">
+        <button class="mobile-lang-btn active" data-lang="en"><img src="https://flagcdn.com/w20/us.png" alt="US">
+          English</button>
+        <button class="mobile-lang-btn" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR">
+          Français</button>
+        <button class="mobile-lang-btn" data-lang="zh"><img src="https://flagcdn.com/w20/cn.png" alt="CN"> 中文</button>
+        <button class="mobile-lang-btn" data-lang="ur"><img src="https://flagcdn.com/w20/pk.png" alt="PK"> اردو</button>
+        <button class="mobile-lang-btn" data-lang="ar"><img src="https://flagcdn.com/w20/sa.png" alt="SA">
+          العربية</button>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center;margin-top:8px;">
+        <div class="mobile-nav-control-label" style="margin-bottom:0">Theme</div>
+        <button id="mobile-theme-toggle" class="mobile-lang-btn">
+          <span class="mobile-theme-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5" />
+              <path
+                d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+            </svg></span>
+          Toggle
+        </button>
+      </div>
+      <a href="https://www.hiesabati.com/auth" class="btn btn-primary"
+        style="margin-top:16px;width:100%;justify-content:center" data-i18n="navGetStarted">Get Started</a>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="container">
+      <div class="badge badge-emerald" style="margin-bottom:var(--space-md)">💎 <span data-i18n="pricingBadge">Pricing
+          Plans</span></div>
+      <h1 class="display-2" style="margin-bottom:var(--space-md)">
+        <span data-i18n="pricingTitle">Simple, </span><em class="gradient-text"
+          data-i18n="pricingTitleHighlight"> Pricing Packages</em>
+      </h1>
+      <p class="body-lg" style="max-width:560px;margin:0 auto" data-i18n="pricingSubtitle">Built for every stage of your
+        business growth. All plans include a free trial with no credit card required.</p>
+    </div>
+  </section>
+
+  <!-- PRICING TOGGLE + CARDS -->
+  <section class="section">
+    <div class="container">
+      <div class="pricing-toggle-wrap reveal">
+        <div class="pricing-toggle">
+          <button id="pricing-monthly" class="pricing-toggle-btn active"
+            data-i18n="pricingToggleMonthly">Monthly</button>
+          <button id="pricing-yearly" class="pricing-toggle-btn" data-i18n="pricingToggleYearly">Yearly</button>
+        </div>
+        <div class="pricing-save-badge" data-i18n="pricingSaveBadge">Save 20%</div>
+      </div>
+
+      <div class="pricing-grid reveal">
+        <div class="pricing-card">
+          <div class="pricing-plan-name" data-i18n="plan1Name">AI CFO Suite</div>
+          <div class="pricing-plan-desc" data-i18n="plan1Desc">Smart financial advisor & real-time dashboards</div>
+          <div class="pricing-price-row">
+            <span class="pricing-currency">$</span>
+            <span class="pricing-amount" id="price-plan1">35</span>
+            <span class="pricing-period" data-i18n="pricingPerMonth">/mo</span>
+          </div>
+          <a href="https://www.hiesabati.com/auth" class="btn btn-secondary"
+            style="width:100%;margin-bottom:var(--space-lg);justify-content:center" data-i18n="plan1Cta">Get Started</a>
+          <div class="pricing-features">
+            <div class="pricing-feature-item">
+              <div class="pricing-check">✓</div><span data-i18n="plan1Feature1">Autonomous AI CFO Agent</span>
+            </div>
+            <div class="pricing-feature-item">
+              <div class="pricing-check">✓</div><span data-i18n="plan1Feature2">Real-time cash flow dashboards</span>
+            </div>
+            <div class="pricing-feature-item">
+              <div class="pricing-check">✓</div><span data-i18n="plan1Feature3">Automated bookkeeping & vouchers</span>
+            </div>
+            <div class="pricing-feature-item">
+              <div class="pricing-check">✓</div><span>1 user seat</span>
+            </div>
+            <div class="pricing-feature-item">
+              <div class="pricing-check">✓</div><span>Email support</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pricing-card popular">
+          <div class="pricing-plan-header">
+            <div class="pricing-popular-badge" data-i18n="popularBadge">Most Popular</div>
+            <div class="pricing-plan-name" style="color:var(--emerald);margin-top:18px" data-i18n="plan2Name">Growth
+              Suite
+            </div>
+            <div class="pricing-plan-desc" data-i18n="plan2Desc">Perfect for growing SMBs and expanding teams</div>
+          </div>
+          <div class="pricing-price-row">
+            <span class="pricing-currency">$</span>
+            <span class="pricing-amount" id="price-plan2">120</span>
+            <span class="pricing-period" data-i18n="pricingPerMonth">/mo</span>
+          </div>
+          <a href="https://www.hiesabati.com/auth" class="btn btn-primary"
+            style="width:100%;margin-bottom:var(--space-lg);justify-content:center" data-i18n="plan2Cta">Get Started</a>
+          <div class="pricing-features">
+            <div class="pricing-feature-item">
+              <div class="pricing-check" style="background:rgba(15,118,110,0.15)">✓</div><span
+                data-i18n="plan2Feature1">Everything in AI CFO Suite</span>
+            </div>
+            <div class="pricing-feature-item">
+              <div class="pricing-check" style="background:rgba(15,118,110,0.15)">✓</div><span
+                data-i18n="plan2Feature2">Inventory, sales & purchases</span>
+            </div>
+            <div class="pricing-feature-item">
+              <div class="pricing-check" style="background:rgba(15,118,110,0.15)">✓</div><span
+                data-i18n="plan2Feature3">VAT & corporate tax compliance</span>
+            </div>
+            <div class="pricing-feature-item">
+              <div class="pricing-check" style="background:rgba(15,118,110,0.15)">✓</div><span>Up to 3 user seats</span>
+            </div>
+            <div class="pricing-feature-item">
+              <div class="pricing-check" style="background:rgba(15,118,110,0.15)">✓</div><span>OCR receipt
+                scanning</span>
+            </div>
+            <div class="pricing-feature-item">
+              <div class="pricing-check" style="background:rgba(15,118,110,0.15)">✓</div><span>Priority email & chat
+                support</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-plan-header">
+            <div class="pricing-plan-name" data-i18n="plan3Name">Enterprise Suite</div>
+            <div class="pricing-plan-desc" data-i18n="plan3Desc">Full HR, payroll & multi-country operations</div>
+          </div>
+          <div class="pricing-price-row">
+            <span class="pricing-currency">$</span>
+            <span class="pricing-amount" id="price-plan3">180</span>
+            <span class="pricing-period" data-i18n="pricingPerMonth">/mo</span>
+          </div>
+          <a href="https://www.hiesabati.com/auth" class="btn btn-secondary"
+            style="width:100%;margin-bottom:var(--space-lg);justify-content:center" data-i18n="plan3Cta">Get Started</a>
+          <div class="pricing-features">
+            <div class="pricing-feature-item">
+              <div class="pricing-check">✓</div><span data-i18n="plan3Feature1">Everything in Growth Suite</span>
+            </div>
+            <div class="pricing-feature-item">
+              <div class="pricing-check">✓</div><span data-i18n="plan3Feature2">Full HR & payroll lifecycle</span>
+            </div>
+            <div class="pricing-feature-item">
+              <div class="pricing-check">✓</div><span data-i18n="plan3Feature3">Multi-country audit trails</span>
+            </div>
+            <div class="pricing-feature-item">
+              <div class="pricing-check">✓</div><span>Up to 10 user seats</span>
+            </div>
+            <div class="pricing-feature-item">
+              <div class="pricing-check">✓</div><span>Dedicated account manager</span>
+            </div>
+            <div class="pricing-feature-item">
+              <div class="pricing-check">✓</div><span>Advanced API access</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pricing-card card-gold">
+          <div class="pricing-plan-name" style="color:var(--gold)" data-i18n="plan4Name">Custom</div>
+          <div class="pricing-plan-desc" data-i18n="plan4Desc">Bespoke deployment for large enterprises</div>
+          <div class="pricing-price-row">
+            <span class="pricing-amount" id="price-plan4" style="font-size:2rem" data-i18n="plan4Price">Custom</span>
+          </div>
+          <a href="contact.html" class="btn btn-gold"
+            style="width:100%;margin-bottom:var(--space-lg);justify-content:center" data-i18n="plan4Cta">Contact Us</a>
+          <div class="pricing-features">
+            <div class="pricing-feature-item">
+              <div class="pricing-check" style="background:rgba(212,160,23,0.15);color:var(--gold)">✓</div><span
+                data-i18n="plan4Feature1">Select any modules & features</span>
+            </div>
+            <div class="pricing-feature-item">
+              <div class="pricing-check" style="background:rgba(212,160,23,0.15);color:var(--gold)">✓</div><span
+                data-i18n="plan4Feature2">Private AI & isolated servers</span>
+            </div>
+            <div class="pricing-feature-item">
+              <div class="pricing-check" style="background:rgba(212,160,23,0.15);color:var(--gold)">✓</div><span
+                data-i18n="plan4Feature3">24/7 priority support & API</span>
+            </div>
+            <div class="pricing-feature-item">
+              <div class="pricing-check" style="background:rgba(212,160,23,0.15);color:var(--gold)">✓</div>
+              <span>Unlimited user seats</span>
+            </div>
+            <div class="pricing-feature-item">
+              <div class="pricing-check" style="background:rgba(212,160,23,0.15);color:var(--gold)">✓</div><span>SLA
+                guarantees</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-center body-sm" style="margin-top:var(--space-xl)" data-i18n="pricingSubtext">
+        ✓ AI CFO included in all plans · ✓ No credit card required · ✓ Cancel anytime
+      </p>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="section" style="background:var(--bg-surface)">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label">Full Comparison</div>
+        <h2 class="display-2">Compare all <em class="gradient-text">features</em></h2>
+      </div>
+      <div class="comparison-table-wrapper reveal">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>AI CFO Suite</th>
+              <th class="highlight-col">Growth Suite ✦</th>
+              <th>Enterprise</th>
+              <th>Custom</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>AI CFO Agent</td>
+              <td class="check-yes">✦</td>
+              <td class="check-yes">✦</td>
+              <td class="check-yes">✦</td>
+              <td class="check-yes">✦</td>
+            </tr>
+            <tr>
+              <td>Real-time Dashboards</td>
+              <td class="check-yes">✦</td>
+              <td class="check-yes">✦</td>
+              <td class="check-yes">✦</td>
+              <td class="check-yes">✦</td>
+            </tr>
+            <tr>
+              <td>Automated Bookkeeping</td>
+              <td class="check-yes">✦</td>
+              <td class="check-yes">✦</td>
+              <td class="check-yes">✦</td>
+              <td class="check-yes">✦</td>
+            </tr>
+            <tr>
+              <td>Bank Integration</td>
+              <td class="check-yes">✦</td>
+              <td class="check-yes">✦</td>
+              <td class="check-yes">✦</td>
+              <td class="check-yes">✦</td>
+            </tr>
+            <tr>
+              <td>OCR Receipt Scanning</td>
+              <td class="check-no">—</td>
+              <td class="check-yes">✦</td>
+              <td class="check-yes">✦</td>
+              <td class="check-yes">✦</td>
+            </tr>
+            <tr>
+              <td>Inventory Management</td>
+              <td class="check-no">—</td>
+              <td class="check-yes">✦</td>
+              <td class="check-yes">✦</td>
+              <td class="check-yes">✦</td>
+            </tr>
+            <tr>
+              <td>VAT & Tax Compliance</td>
+              <td class="check-no">—</td>
+              <td class="check-yes">✦</td>
+              <td class="check-yes">✦</td>
+              <td class="check-yes">✦</td>
+            </tr>
+            <tr>
+              <td>HR & Payroll</td>
+              <td class="check-no">—</td>
+              <td class="check-no">—</td>
+              <td class="check-yes">✦</td>
+              <td class="check-yes">✦</td>
+            </tr>
+            <tr>
+              <td>Multi-country Audit</td>
+              <td class="check-no">—</td>
+              <td class="check-no">—</td>
+              <td class="check-yes">✦</td>
+              <td class="check-yes">✦</td>
+            </tr>
+            <tr>
+              <td>Private AI Servers</td>
+              <td class="check-no">—</td>
+              <td class="check-no">—</td>
+              <td class="check-no">—</td>
+              <td class="check-yes">✦</td>
+            </tr>
+            <tr>
+              <td>User Seats</td>
+              <td>1</td>
+              <td>Up to 3</td>
+              <td>Up to 10</td>
+              <td>Unlimited</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label" data-i18n="faqBadge">FAQ</div>
+        <h2 class="display-2" data-i18n="faqTitle">Pricing <em class="gradient-text">questions</em></h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-question-btn"><span>Is there a free trial?</span><span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes! Every plan includes a free trial with no credit card required. You can
+              explore the full platform before committing to a subscription.</div>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-delay-1">
+          <button class="faq-question-btn"><span>Can I change plans anytime?</span><span
+              class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Absolutely. You can upgrade or downgrade your plan at any time. Changes take
+              effect at the start of your next billing cycle.</div>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-delay-2">
+          <button class="faq-question-btn"><span>What payment methods do you accept?</span><span
+              class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">We accept all major credit and debit cards, as well as bank transfers for
+              annual enterprise plans.</div>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-delay-3">
+          <button class="faq-question-btn"><span>Do you offer refunds?</span><span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">We offer a 30-day money-back guarantee on all paid plans. If you're not
+              satisfied, we'll refund your payment in full.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- FOOTER -->
+  <footer>
+    <div class="container max-w-4xl text-center">
+      <!-- Call to Action Banner -->
+      <div class="footer-cta-card">
+        <h2 data-i18n="footerCtaTitle">Ready to Transform Your Financial Operations?</h2>
+        <p data-i18n="footerCtaSubtitle">Join hundreds of businesses using AI Financial Assistant to make smarter
+          financial decisions in Global World</p>
+        <a href="https://www.hiesabati.com/auth" class="btn btn-primary btn-large" data-i18n="footerCtaPrimary">Start Your
+          Free Trial
+          Now</a>
+        <span class="cta-subtext" data-i18n="footerCtaSubtext">Free forever plan • Setup in 2 minutes • No credit card
+          required</span>
+      </div>
+  
+      <div class="footer-links-grid">
+        <div class="footer-brand-column">
+          <span class="brand-title" data-i18n="logoHiesabati">Hiesabati AI</span>
+          <p class="brand-desc" data-i18n="footerBrandDesc">AI-powered financial management for modern businesses in
+            Global World.</p>
+          <!-- Social Media Links -->
+          <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61590682032569" class="social-link facebook"
+              aria-label="Facebook" title="Facebook">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/hiesabati_ai/" class="social-link instagram" aria-label="Instagram"
+              title="Instagram">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/hiesabatiai/" class="social-link linkedin" aria-label="LinkedIn"
+              title="LinkedIn">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+            <a href="https://x.com/HIESABATI" class="social-link x-twitter" aria-label="X (Twitter)" title="X (Twitter)">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.258 5.626zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/@Hiesabati" class="social-link youtube" aria-label="YouTube" title="YouTube">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+  
+          </div>
+        </div>
+        <div class="footer-links-grid-cols">
+          <div class="footer-links-column">
+            <span class="links-title" data-i18n="footerColProduct">Product</span>
+            <a href="features.html" data-i18n="footerLinkFeatures">Features</a>
+            <a href="pricing.html" data-i18n="footerLinkPricing">Pricing</a>
+            <a href="about.html" data-i18n="footerLinkAbout">About Us</a>
+            <a href="blog.html" data-i18n="footerLinkBlog">Blog</a>
+          </div>
+          <div class="footer-links-column">
+            <span class="links-title" data-i18n="footerColSupport">Support</span>
+            <a href="contact.html" data-i18n="footerLinkHelp">Help Center</a>
+            <a href="docs.html" data-i18n="footerLinkDocs">Documentation</a>
+            <a href="contact.html" data-i18n="footerLinkContact">Contact Sales</a>
+          </div>
+          <div class="footer-links-column">
+            <span class="links-title" data-i18n="footerColLegal">Legal</span>
+            <a href="privacy.html" data-i18n="footerLinkPrivacy">Privacy Policy</a>
+            <a href="terms.html" data-i18n="footerLinkTerms">Terms of Service</a>
+            <a href="security.html" data-i18n="footerLinkSecurity">Security</a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="footer-bottom-bar">
+        <span>&copy; 2026 Hiesabati AI. All rights reserved.</span>
+        <div class="footer-bottom-social">
+          <a href="https://www.facebook.com/profile.php?id=61590682032569" aria-label="Facebook"><svg viewBox="0 0 24 24">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg></a>
+          <a href="https://www.instagram.com/hiesabati_ai/" aria-label="Instagram"><svg viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg></a>
+          <a href="https://www.linkedin.com/in/hiesabatiai/" aria-label="LinkedIn"><svg viewBox="0 0 24 24">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg></a>
+          <a href="https://x.com/HIESABATI" aria-label="X (Twitter)"><svg viewBox="0 0 24 24">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.258 5.626zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg></a>
+          <a href="https://www.youtube.com/@Hiesabati" aria-label="YouTube"><svg viewBox="0 0 24 24">
+              <path
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg></a>
+  
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="translations.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
